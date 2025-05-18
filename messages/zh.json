@@ -1,0 +1,467 @@
+{
+  "public": {
+    "auth": {
+      "signIn": "登录",
+      "signingIn": "登录中...",
+      "signOut": "退出登录"
+    },
+    "Blog": {
+      "allPosts": "所有文章",
+      "publishedOn": "发布于",
+      "viewTaggedPosts": "查看标签为 {tag} 的文章"
+    },
+    "Pagination": {
+      "previous": "上一页",
+      "next": "下一页",
+      "pageInfo": "第 {current} 页，共 {total} 页"
+    }
+  },
+  "saas_one": {
+    "header": {
+      "brand": {
+        "title": "一键启动你的AI SaaS",
+        "avatar": {
+          "src": "/imgs/logo.png",
+          "title": "Ship SaaS One Click - 一键启动你的AI SaaS"
+        },
+        "url": "/"
+      },
+      "nav": {
+        "items": [
+          {
+            "title": "特性",
+            "url": "/#features",
+            "target": "_self"
+          },
+          {
+            "title": "价格",
+            "url": "/#pricing",
+            "target": "_self"
+          },
+          {
+            "title": "文档",
+            "url": "/docs",
+            "target": "_blank"
+          },
+          {
+            "title": "博客",
+            "url": "/blog",
+            "target": "_blank"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "title": "开始使用",
+          "url": "/api/auth/signin",
+          "target": "_self"
+        }
+      ]
+    },
+    "hero": {
+      "title": "一键启动你的AI SaaS创业项目",
+      "description": "基于Next.js + Supabase构建的现代化AI SaaS模板，集成完整用户系统和支付流程，助你快速将创意转化为产品。",
+      "image": {
+        "src": "/imgs/hero.png",
+        "title": "Ship SaaS One Click Template"
+      },
+      "tip": "已帮助100+开发者快速启动他们的SaaS项目",
+      "image_position": "right",
+      "text_align": "left",
+      "buttons": [
+        {
+          "title": "立即开始",
+          "url": "/docs/getting-started",
+          "target": "_blank"
+        },
+        {
+          "title": "查看演示",
+          "url": "https://demo.shipsaas.com",
+          "target": "_blank",
+          "theme": "outline"
+        }
+      ],
+      "show_happy_users": true,
+      "show_proof": true
+    },
+    "section": {
+      "items": [
+        {
+          "name": "what",
+          "title": "为什么选择 Ship SaaS One Click?",
+          "description": "我们提供一站式AI SaaS创业解决方案，让你专注于产品创新而不是基础架构。",
+          "image": {
+            "src": "/imgs/section-1.png"
+          },
+          "image_position": "left",
+          "text_align": "center",
+          "items": [
+            {
+              "title": "完整的用户系统",
+              "description": "集成Supabase认证，支持多种第三方登录，用户管理一键搞定。"
+            },
+            {
+              "title": "国际化支持",
+              "description": "内置i18n多语言系统，一键翻译，轻松开拓海外市场。"
+            },
+            {
+              "title": "支付系统集成",
+              "description": "整合Stripe支付，支持一次性支付和订阅模式。"
+            }
+          ]
+        },
+        {
+          "name": "why",
+          "title": "专为AI SaaS定制的功能",
+          "description": "我们深知AI SaaS创业者的需求，提供一系列开箱即用的AI功能。",
+          "image": {
+            "src": "/imgs/section-2.png"
+          },
+          "image_position": "right",
+          "text_align": "center",
+          "items": [
+            {
+              "title": "AI生成落地页",
+              "description": "一键生成专业的产品落地页，支持多语言转换。"
+            },
+            {
+              "title": "博客文档系统",
+              "description": "基于MDX的博客系统，支持AI辅助写作和翻译。"
+            },
+            {
+              "title": "AI API集成",
+              "description": "预置OpenAI接口，快速构建AI功能。"
+            }
+          ]
+        },
+        {
+          "name": "how",
+          "title": "三步启动你的SaaS项目",
+          "description": "从零到上线，只需简单三步：",
+          "image": {
+            "src": "/imgs/section-3.png"
+          },
+          "image_position": "left",
+          "text_align": "center",
+          "items": [
+            {
+              "title": "1. 克隆模板",
+              "description": "一键克隆代码库，获取完整项目结构。"
+            },
+            {
+              "title": "2. 配置服务",
+              "description": "按文档配置Supabase和Stripe等服务。"
+            },
+            {
+              "title": "3. 部署上线",
+              "description": "一键部署到Vercel，即刻开始服务用户。"
+            }
+          ],
+          "buttons": [
+            {
+              "title": "查看部署文档 👉",
+              "url": "/docs/deployment",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    "feature": {
+      "title": "为什么开发者选择我们?",
+      "description": "我们提供现代化的技术栈和完整的功能模块，助你快速构建专业的SaaS产品。",
+      "tip": "已有超过1000+开发者使用我们的模板成功启动项目",
+      "items": [
+        {
+          "title": "现代技术栈",
+          "description": "基于Next.js 14 + TypeScript + Tailwind CSS构建，确保最佳开发体验。",
+          "avatar": {
+            "src": "/imgs/icons/1.svg"
+          }
+        },
+        {
+          "title": "完整用户系统",
+          "description": "集成Supabase认证和数据库，支持第三方登录和用户管理。",
+          "avatar": {
+            "src": "/imgs/icons/2.svg"
+          }
+        },
+        {
+          "title": "国际化支持",
+          "description": "内置i18n系统，支持一键翻译，助力产品出海。",
+          "avatar": {
+            "src": "/imgs/icons/3.svg"
+          }
+        },
+        {
+          "title": "支付系统",
+          "description": "整合Stripe支付，支持多种计费模式，快速变现。",
+          "avatar": {
+            "src": "/imgs/icons/4.svg"
+          }
+        }
+      ]
+    },
+    "cta": {
+      "title": "准备好启动你的SaaS项目了吗？",
+      "description": "立即开始使用Ship SaaS One Click，让你的创意快速落地！",
+      "buttons": [
+        {
+          "title": "开始免费使用",
+          "url": "/docs/getting-started",
+          "target": "_blank"
+        }
+      ]
+    },
+    "testimonial": {
+      "title": "开发者们的评价",
+      "description": "看看其他开发者使用Ship SaaS One Click的体验。",
+      "items": [
+        {
+          "name": "David Chen",
+          "title": "独立开发者",
+          "description": "这个模板节省了我至少2个月的开发时间，现在我的AI SaaS已经有了第一批付费用户。",
+          "avatar": {
+            "src": "/imgs/avatars/avatar-1.png"
+          }
+        },
+        {
+          "name": "Sarah Zhang",
+          "title": "技术创始人",
+          "description": "完整的国际化支持让我们轻松打开了海外市场，现在有40%的用户来自海外。",
+          "avatar": {
+            "src": "/imgs/avatars/avatar-2.png"
+          }
+        },
+        {
+          "name": "Michael Wang",
+          "title": "全栈开发者",
+          "description": "代码质量很高，文档详尽，最重要的是节省了大量处理支付和认证的时间。",
+          "avatar": {
+            "src": "/imgs/avatars/avatar-3.png"
+          }
+        }
+      ]
+    },
+    "faq": {
+      "title": "常见问题",
+      "description": "关于Ship SaaS One Click的常见问题解答。",
+      "items": [
+        {
+          "title": "使用这个模板需要多少技术基础？",
+          "description": "如果你熟悉React和Next.js基础知识，就能很好地使用这个模板。我们提供详细的文档指导。"
+        },
+        {
+          "title": "支持哪些部署平台？",
+          "description": "我们优先支持Vercel部署，同时也支持其他平台如Netlify、Railway等。"
+        },
+        {
+          "title": "如何获取技术支持？",
+          "description": "我们提供详细的文档和视频教程，同时可以通过GitHub Issues获取社区支持。"
+        }
+      ]
+    },
+    "footer": {
+      "brand": {
+        "title": "Ship SaaS One Click",
+        "description": "一站式AI SaaS创业模板，助你快速启动项目。",
+        "avatar": {
+          "src": "/imgs/logo.png",
+          "title": "Ship SaaS One Click"
+        },
+        "url": "/"
+      },
+      "badge_disabled": false,
+      "copyright": "© 2024 Ship SaaS One Click • All rights reserved.",
+      "social": {
+        "items": [
+          {
+            "title": "GitHub",
+            "url": "https://github.com/fengyunzaidushi/ship-saas-one-click",
+            "target": "_blank"
+          },
+          {
+            "title": "Twitter",
+            "url": "https://twitter.com/shipsaasoneclick",
+            "target": "_blank"
+          },
+          {
+            "title": "Discord",
+            "url": "https://discord.gg/shipsaas",
+            "target": "_blank"
+          },
+          {
+            "title": "Email",
+            "url": "mailto:support@shipsaas.com",
+            "target": "_self"
+          }
+        ]
+      },
+      "nav": {
+        "items": [
+          {
+            "title": "产品",
+            "children": [
+              {
+                "title": "特性",
+                "url": "/#features",
+                "target": "_self"
+              },
+              {
+                "title": "定价",
+                "url": "/#pricing",
+                "target": "_self"
+              },
+              {
+                "title": "路线图",
+                "url": "/roadmap",
+                "target": "_blank"
+              }
+            ]
+          },
+          {
+            "title": "资源",
+            "children": [
+              {
+                "title": "文档",
+                "url": "/docs",
+                "target": "_blank"
+              },
+              {
+                "title": "博客",
+                "url": "/blog",
+                "target": "_blank"
+              },
+              {
+                "title": "GitHub",
+                "url": "https://github.com/fengyunzaidushi/ship-saas-one-click",
+                "target": "_blank"
+              }
+            ]
+          },
+          {
+            "title": "法律",
+            "children": [
+              {
+                "title": "隐私政策",
+                "url": "/privacy-policy"
+              },
+              {
+                "title": "服务条款",
+                "url": "/terms-of-service"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "usecase": {
+      "description": "受到全球开发者的信赖",
+      "items": [
+        {
+          "image": {
+            "src": "/imgs/logos/1.svg",
+            "title": "Company 1"
+          }
+        }
+      ]
+    }
+  },
+  "NameGenerators": {
+    "defaultConfig": {
+      "genderOptions": ["男性", "女性"],
+      "genreOptions": ["古代", "现代", "未来"],
+      "nameStyleOptions": ["单姓", "复姓", "无姓"],
+      "countOptions": [3, 5, 8, 10],
+      "defaultTraits": ["高冷", "绝情", "邪气"]
+    },
+    "defaultNames": [
+      {
+        "name": "薛婉儿",
+        "description": "冷艳绝美，心如寒冰，行事狠辣，充满邪气。",
+        "review": "她的美丽如同冰雪，却隐藏着无情的心。"
+      },
+      {
+        "name": "叶冷蝉",
+        "description": "冷漠高冷，无情绝恋，带着一股邪气。",
+        "review": "她如同夜晚的蝉鸣，冰冷而孤寂。"
+      },
+      {
+        "name": "沈幽冥",
+        "description": "幽深高冷，心如幽冥，散发着邪气。",
+        "review": "她的眼眸如同深渊，让人不敢接近。"
+      },
+      {
+        "name": "荆魅影",
+        "description": "魅惑高冷，行事阴影，充满邪气。",
+        "review": "她的存在如同一道幽暗的影，让人心生畏惧。"
+      },
+      {
+        "name": "柳冷霜",
+        "description": "冷傲高贵，心如霜雪，带着一股邪气。",
+        "review": "她的美丽如同柳树上的霜，冰冷而无情。"
+      }
+    ],
+    "defaultCharacterInfo": {
+      "gender": "女性",
+      "genre": "古代",
+      "nameStyle": "复性",
+      "traits": ["高冷", "绝情", "邪气"],
+      "additionalInfo": "",
+      "count": 5
+    },
+    "errorMessage": "生成名字时出错，请稍后再试。"
+  },
+  "price_onetime": {
+    "title": "简单定价方案",
+    "description": "选择最适合您创作需求的方案",
+    "tip": "所有方案均为一次性付款，无需订阅",
+    "plans": [
+      {
+        "name": "基础版",
+        "description": "适合个人作者和爱好者使用",
+        "price": "¥69",
+        "credits": "1,000点数",
+        "features": [
+          "1,000次名字生成点数",
+          "所有名字风格和类型",
+          "点数有效期1年"
+        ],
+        "buttonText": "开始创作",
+        "popular": false
+      },
+      {
+        "name": "专业版",
+        "description": "适合专业作者和创作团队",
+        "price": "¥499",
+        "originalPrice": "¥699",
+        "credits": "10,000点数",
+        "features": [
+          "10,000次名字生成点数",
+          "所有名字风格和类型",
+          "点数有效期10年"
+        ],
+        "buttonText": "升级专业版",
+        "popular": true
+      }
+    ],
+    "faq": [
+      {
+        "question": "一个点数可以生成多少个名字？",
+        "answer": "一个点数可以生成最多10个带有详细背景和描述的角色名字。"
+      },
+      {
+        "question": "点数会过期吗？",
+        "answer": "基础版点数有效期为1年。专业版点数有效期为10年。"
+      },
+      {
+        "question": "我可以之后再升级方案吗？",
+        "answer": "是的，您可以随时升级到专业版。您剩余的点数将会相应转换。"
+      },
+      {
+        "question": "支持哪些支付方式？",
+        "answer": "我们支持支付宝、微信支付等主流支付方式。"
+      }
+    ]
+  }
+}
