@@ -1,30 +1,17 @@
 name = "autosite-saas"
 compatibility_date = "2024-05-24"
-
-# Cloudflare Pages configuration
-[site]
-bucket = ".next/static"
+pages_build_output_dir = ".next"
 
 # Build configuration
 [build]
 command = "npm run build"
 
-# Build environment variables (non-sensitive defaults)
+# Build environment variables (for build time only)
 [build.environment]
 NODE_ENV = "production"
-
-# Pages Functions configuration
-[[build.upload]]
-format = "service-worker"
-
-# Routes configuration
-[[routes]]
-include = ["/*"]
-exclude = ["<build>", "<files>", "<prerendered>"]
-
-# Define environment variables that should be available at runtime
-[vars]
-NODE_ENV = "production"
+# Add placeholder values for build - real values will be in Cloudflare Pages settings
+NEXT_PUBLIC_SUPABASE_URL = "https://placeholder.supabase.co"
+NEXT_PUBLIC_SUPABASE_ANON_KEY = "placeholder-anon-key"
 
 # Compatibility flags for Next.js
 [compatibility_flags]
