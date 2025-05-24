@@ -21,7 +21,6 @@
     "dev": "next dev",
     "build": "next build && cross-env NODE_OPTIONS='--experimental-json-modules'",
     "serve": "next start",
-    "test:webhook": "ts-node scripts/test-webhook.ts",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts",
     "prepare": "husky"
