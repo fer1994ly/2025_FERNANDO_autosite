@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 import OpenAI from "openai";
 import { createClient } from '@/lib/supabase/server';
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+
+// Only initialize OpenAI if we have an API key
+const openaiApiKey = process.env.OPENAI_API_KEY || 'placeholder-key';
+const openai = openaiApiKey !== 'placeholder-key' ? new OpenAI({
+  apiKey: openaiApiKey,
   baseURL: process.env.OPENAI_API_BASE,
-});
+}) : null;
 
 // locale 语言 映射表
 const localeMap = {
@@ -20,6 +23,11 @@ export async function POST(request: NextRequest) {
   const language = localeMap[locale as keyof typeof localeMap] || 'English';
 
   try {
+    if (!openai) {
+      // Return default names if OpenAI is not configured
+      return NextResponse.json({ characters: JSON.parse(defaultNames) });
+    }
+    
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [

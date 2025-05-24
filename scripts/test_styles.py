@@ -12,6 +12,11 @@ load_dotenv(".env.local")
 
 # 设置API密钥
 api_token = os.getenv("REPLICATE_API_TOKEN")
+if not api_token:
+    print("Warning: REPLICATE_API_TOKEN not found. Script will not be able to generate images.")
+    # Exit gracefully if no token
+    import sys
+    sys.exit(0)
 print("api_token", api_token)
 os.environ["REPLICATE_API_TOKEN"] = api_token
 
