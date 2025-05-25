@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
     if (error) {
       // If slug already exists, add a random number
       if (error.code === '23505') {
-        pageData.slug = `${pageData.slug}-${Math.random().toString(36).substr(2, 9)}`
+        pageData.slug = `${pageData.slug}-${Math.random().toString(36).substring(2, 11)}`
         const { data: retryData, error: retryError } = await supabase
           .from('landing_pages')
           .insert({
