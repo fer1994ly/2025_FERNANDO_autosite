@@ -26,8 +26,12 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
+.env.example
 .env*.local
 .env.development
+.env.production
+PRIVATE_ENV_VALUES.txt
 # vercel
 .vercel
 

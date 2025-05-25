@@ -5,6 +5,6 @@ export default function LandingPage({ params }) {
   const unwrappedParams = use(params) as { locale: string };
   const locale = unwrappedParams.locale;
   return (
-    <ShadcnLandingPage locale={locale} />
+    <ShadcnLandingPage />
   );
 }

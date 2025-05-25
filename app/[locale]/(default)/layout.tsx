@@ -1,8 +1,6 @@
 
 
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
-import { SearchProvider, SearchConfig } from 'pliny/search'
-import SearchProviderCustom from '@/components/SearchProviderCustom'
 import Header from '@/components/Header'
 import Footer from '@/templates/shadcn/components/Footer'
 import SectionContainer from '@/components/SectionContainer'
@@ -35,11 +33,8 @@ export default async function LocaleLayout({
             <ThemeProviders>
                 <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
                 <SectionContainer>
-                    <SearchProviderCustom>
-                        <Header />
-                       
-                        <main className="mb-auto">{children}</main>
-                    </SearchProviderCustom>
+                    <Header />
+                    <main className="mb-auto">{children}</main>
                     <Footer />
                 </SectionContainer>
             </ThemeProviders>

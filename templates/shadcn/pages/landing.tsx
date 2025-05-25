@@ -1,22 +1,10 @@
 'use client';
 
-import { Suspense } from 'react';
 import { motion } from "framer-motion";
 import Cta from "../components/Cta";
-import Faq from "../components/Faq";
 import Feature from "../components/Feature";
 import Hero from "../components/Hero";
-import Section from "../components/Section";
-import Testimonial from "../components/Testimonial";
-import dynamic from 'next/dynamic';
 
-const NameGenerator = dynamic(() => import('../components/NameGenerator'), {
-  loading: () => <div>Loading...</div>
-});
-
-const PricingOnetime = dynamic(() => import('../../../components/PricingOnetime'), {
-  loading: () => <div>Loading...</div>
-});
 
 const scrollVariants = {
   hidden: { y: 50, opacity: 0 },
@@ -30,7 +18,7 @@ const scrollVariants = {
   }
 };
 
-export default function ShadcnLandingPage({ locale }) {
+export default function ShadcnLandingPage() {
   return (
     <>
       <motion.div
@@ -42,24 +30,6 @@ export default function ShadcnLandingPage({ locale }) {
         <Hero />
       </motion.div>
 
-      {/* <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={scrollVariants}
-      >
-        <NameGenerator locale={locale} />
-      </motion.div> */}
-
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={scrollVariants}
-      >
-        <Section />
-      </motion.div>
-
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -67,35 +37,6 @@ export default function ShadcnLandingPage({ locale }) {
         variants={scrollVariants}
       >
         <Feature />
-      </motion.div>
-
-      <Suspense fallback={<div>Loading...</div>}>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={scrollVariants}
-        >
-          <PricingOnetime />
-        </motion.div>
-      </Suspense>
-
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={scrollVariants}
-      >
-        <Testimonial />
-      </motion.div>
-
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={scrollVariants}
-      >
-        <Faq />
       </motion.div>
 
       <motion.div

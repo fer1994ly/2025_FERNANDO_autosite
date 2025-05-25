@@ -5,8 +5,6 @@ import siteMetadata from '@/data/siteMetadata'
 import Link from './Link'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
-import SearchButton from './SearchButton'
-import LanguageSwitch from './LanguageSwitch'
 import LoginButton from "./auth/login-button"
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
@@ -63,9 +61,7 @@ const Header = () => {
                 </Link>
               ))}
           </div>
-          <SearchButton />
           <ThemeSwitch />
-          <LanguageSwitch />
           <div className="flex items-center justify-center">
             <LoginButton />
           </div>
