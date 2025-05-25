@@ -56,17 +56,11 @@
           }
         ]
       },
-      "buttons": [
-        {
-          "title": "Get Started",
-          "url": "/api/auth/signin",
-          "target": "_self"
-        }
-      ]
+      "buttons": []
     },
     "hero": {
-      "title": "Launch Your AI SaaS Startup in One Click",
-      "description": "A modern AI SaaS template built with Next.js + Supabase, featuring complete user system and payment integration to help you turn ideas into products quickly.",
+      "title": "AI Landing Page Generator",
+      "description": "Create stunning landing pages in seconds with AI. Built with Next.js + Supabase, featuring complete user system and payment integration.",
       "image": {
         "src": "/imgs/hero.png",
         "title": "Ship SaaS One Click Template"
@@ -127,8 +121,8 @@
           "text_align": "center",
           "items": [
             {
-              "title": "AI Landing Page Generator",
-              "description": "Generate professional product landing pages with one click, supporting multilingual conversion."
+              "title": "One-Click Page Generation",
+              "description": "Generate professional landing pages instantly with AI-powered content and design suggestions."
             },
             {
               "title": "Blog & Documentation System",

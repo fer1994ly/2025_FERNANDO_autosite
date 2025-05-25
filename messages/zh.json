@@ -56,13 +56,7 @@
           }
         ]
       },
-      "buttons": [
-        {
-          "title": "开始使用",
-          "url": "/api/auth/signin",
-          "target": "_self"
-        }
-      ]
+      "buttons": []
     },
     "hero": {
       "title": "一键启动你的AI SaaS创业项目",

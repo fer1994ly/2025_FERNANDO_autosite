@@ -1,3 +1,5 @@
+'use client'
+
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -10,8 +12,9 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import LoginButton from "@/components/auth/login-button";
 
-export default function () {
+export default function Header() {
     const t = useTranslations('saas_one.header');
     const navItems = (t.raw('nav.items') as any[]) || [];
     const buttons = (t.raw('buttons') as any[]) || [];
@@ -69,6 +72,9 @@ export default function () {
                             </Button>
                         </Link>
                     ))}
+                    
+                    {/* Add Login Button */}
+                    <LoginButton />
 
                     <div className="md:hidden w-full flex items-center gap-x-2">
                         <Link
