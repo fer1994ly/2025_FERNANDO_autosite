@@ -1,8 +1,8 @@
-# AI Landing Page & Blog Generator
+# AI Landing Page Generator
 
-🚀 AI SaaS 快速出海模板 | AI SaaS ONE CLICK Template
+🚀 Create stunning landing pages in seconds with AI
 
-一站式 AI SaaS 创业模板，内置落地页/博客生成器，支持i18n多语言本，帮助产品快速出海。集成完整用户系统和支付流程，基于 Next.js + Supabase 构建的现代化解决方案。
+A simple, powerful AI-powered landing page generator. Built with Next.js + Supabase, featuring complete user system and payment integration.
 
 ## 🌟 主要特性
 
