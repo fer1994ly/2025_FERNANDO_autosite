@@ -10,10 +10,6 @@ import Section from "../components/Section";
 import Testimonial from "../components/Testimonial";
 import dynamic from 'next/dynamic';
 
-const NameGenerator = dynamic(() => import('../components/NameGenerator'), {
-  loading: () => <div>Loading...</div>
-});
-
 const PricingOnetime = dynamic(() => import('../../../components/PricingOnetime'), {
   loading: () => <div>Loading...</div>
 });
@@ -41,15 +37,6 @@ export default function ShadcnLandingPage({ locale }) {
       >
         <Hero />
       </motion.div>
-
-      {/* <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={scrollVariants}
-      >
-        <NameGenerator locale={locale} />
-      </motion.div> */}
 
       <motion.div
         initial="hidden"
