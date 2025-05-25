@@ -1,11 +1,25 @@
+'use client'
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+import { createClient } from "@/utils/supabase/client";
 
 export default function Hero() {
     const t = useTranslations('saas_one.hero');
     const buttons = t.raw('buttons');
     const hasImage = t.raw('image');
+    const [user, setUser] = useState<any>(null);
+    const supabase = createClient();
+
+    useEffect(() => {
+        const checkUser = async () => {
+            const { data: { user } } = await supabase.auth.getUser();
+            setUser(user);
+        };
+        checkUser();
+    }, []);
 
     // 确保buttons是数组
     const validButtons = Array.isArray(buttons) ? buttons : [];
@@ -23,17 +37,20 @@ export default function Hero() {
                     </p>
                     {validButtons.length > 0 && (
                         <div className="flex flex-row justify-center gap-4">
-                            {validButtons.map((v, idx) => (
-                                <Link key={idx} href={v.url || ""} target={"_self"}>
-                                    <Button
-                                        key={idx}
-                                        size="lg"
-                                        variant={v.theme === "outline" ? "outline" : "default"}
-                                    >
-                                        {v.title}
-                                    </Button>
-                                </Link>
-                            ))}
+                            {validButtons.map((v, idx) => {
+                                // If user is logged in and this is the "Start Now" button, redirect to dashboard
+                                const href = user && v.title === "Start Now" ? "/dashboard" : (v.url || "");
+                                return (
+                                    <Link key={idx} href={href} target={"_self"}>
+                                        <Button
+                                            size="lg"
+                                            variant={v.theme === "outline" ? "outline" : "default"}
+                                        >
+                                            {v.title}
+                                        </Button>
+                                    </Link>
+                                );
+                            })}
                         </div>
                     )}
                     {t("tip") && <p className="mt-4 text-sm text-gray-500">{t('tip')}</p>}

@@ -168,6 +168,12 @@ export default function LoginButton() {
             </div>
           </div>
           <DropdownMenuItem
+            className="cursor-pointer"
+            onClick={() => window.location.href = '/dashboard'}
+          >
+            Dashboard
+          </DropdownMenuItem>
+          <DropdownMenuItem
             className="cursor-pointer text-red-600 focus:text-red-600"
             onClick={handleSignOut}
           >

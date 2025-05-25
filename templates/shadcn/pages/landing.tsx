@@ -6,8 +6,6 @@ import Cta from "../components/Cta";
 import Faq from "../components/Faq";
 import Feature from "../components/Feature";
 import Hero from "../components/Hero";
-import Section from "../components/Section";
-import Testimonial from "../components/Testimonial";
 import dynamic from 'next/dynamic';
 
 const PricingOnetime = dynamic(() => import('../../../components/PricingOnetime'), {
@@ -26,7 +24,7 @@ const scrollVariants = {
   }
 };
 
-export default function ShadcnLandingPage({ locale }) {
+export default function ShadcnLandingPage() {
   return (
     <>
       <motion.div
@@ -36,15 +34,6 @@ export default function ShadcnLandingPage({ locale }) {
         variants={scrollVariants}
       >
         <Hero />
-      </motion.div>
-
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={scrollVariants}
-      >
-        <Section />
       </motion.div>
 
       <motion.div
@@ -66,15 +55,6 @@ export default function ShadcnLandingPage({ locale }) {
           <PricingOnetime />
         </motion.div>
       </Suspense>
-
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={scrollVariants}
-      >
-        <Testimonial />
-      </motion.div>
 
       <motion.div
         initial="hidden"

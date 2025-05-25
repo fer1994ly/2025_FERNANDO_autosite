@@ -63,6 +63,8 @@ export default function EmailAuthForm({ open, onOpenChange }: EmailAuthFormProps
 
         toast.success('Signed in successfully!')
         onOpenChange(false)
+        // Redirect to dashboard
+        window.location.href = '/dashboard'
       }
     } catch (error: any) {
       console.error('Auth error:', error)
