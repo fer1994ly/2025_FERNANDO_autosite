@@ -40,33 +40,33 @@ interface SiteMetadata {
 }
 
 const siteMetadata: SiteMetadata = {
-  title: "一键启动你的AI SaaS",
-  author: "Atalas",
-  headerTitle: "一键启动你的AI SaaS",
+  title: "Autosite - AI Landing Page Generator",
+  author: "Autosite",
+  headerTitle: "Autosite",
   description:
-    "一站式AI SaaS启动模板，基于Next.js和Supabase构建。集成用户认证、Stripe支付和多语言支持，助力开发者快速将AI创意转化为产品。一键部署，立即开始你的SaaS创业之旅。",
+    "Create stunning landing pages in seconds with AI. Just describe your idea and let Autosite generate a complete, professional landing page instantly.",
   keywords:
-    "AI SaaS模板, 一键启动SaaS, 一键部署SaaS, SaaS快速启动模板, AI创业模板, SaaS网站生成器, 快速搭建SaaS, AI SaaS脚手架, Next.js SaaS模板, Supabase SaaS模板, 开发者工具, Stripe支付集成, 用户认证系统, 多语言SaaS, 技术创业工具, 独立开发者模板, 现代SaaS技术栈, AI产品开发, 国际化SaaS模板, Vercel一键部署",
-  language: "zh-CN",
+    "AI landing page generator, landing page builder, AI website builder, instant website creation, automated web design, AI-powered websites, no-code landing pages",
+  language: "en",
   theme: "system", // system, dark or light
 
   siteUrl:
     process.env.NODE_ENV === "production"
-      ? "https://shipsaas1click.com" // 生产环境URL
-      : "http://localhost:3000", // 开发环境URL
-  siteRepo: "https://github.com/fengyunzaidushi/ship-saas-one-click.git",
+      ? "https://autosite-saas-beta.vercel.app"
+      : "http://localhost:3000",
+  siteRepo: "https://github.com/samihalawa/2025_FERNANDO_autosite",
   siteLogo: `${process.env.BASE_PATH || ""}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ""}/static/images/twitter-card.png`,
-  email: "address@yoursite.com",
+  email: "contact@autosite.ai",
   github: "https://github.com",
   x: "https://twitter.com/x",
-  facebook: "https://facebook.com",
-  youtube: "https://youtube.com",
-  linkedin: "https://www.linkedin.com",
-  threads: "https://www.threads.net",
-  instagram: "https://www.instagram.com",
-  medium: "https://medium.com",
-  bluesky: "https://bsky.app/",
+  facebook: "",
+  youtube: "",
+  linkedin: "",
+  threads: "",
+  instagram: "",
+  medium: "",
+  bluesky: "",
   locale: "en-US",
   stickyNav: true,
   analytics: {

@@ -5,10 +5,9 @@ import { useRouter } from 'next/navigation'
 import { createClient } from '@/utils/supabase/client'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
-import { PlusCircle, Globe, Eye, Download, Trash2, Loader2, Copy, ExternalLink } from 'lucide-react'
+import { PlusCircle, Globe, Eye, Trash2, Loader2, Copy, ExternalLink, Sparkles } from 'lucide-react'
 import { toast } from 'sonner'
 
 interface LandingPage {
@@ -29,14 +28,7 @@ export default function DashboardPage() {
   const [landingPages, setLandingPages] = useState<LandingPage[]>([])
   const [showCreateForm, setShowCreateForm] = useState(false)
   const [creating, setCreating] = useState(false)
-  const [formData, setFormData] = useState({
-    title: '',
-    description: '',
-    businessType: '',
-    targetAudience: '',
-    features: '',
-    callToAction: ''
-  })
+  const [prompt, setPrompt] = useState('')
 
   useEffect(() => {
     checkUser()
@@ -60,44 +52,41 @@ export default function DashboardPage() {
   }
 
   async function fetchLandingPages() {
-    // TODO: Fetch from database
-    setLandingPages([])
+    try {
+      const response = await fetch('/api/landing-pages')
+      if (response.ok) {
+        const data = await response.json()
+        setLandingPages(data)
+      }
+    } catch (error) {
+      console.error('Error fetching landing pages:', error)
+    }
   }
 
   async function generateLandingPage() {
+    if (!prompt.trim()) {
+      toast.error('Please describe your landing page idea')
+      return
+    }
+
     setCreating(true)
     try {
-      // TODO: Call AI API to generate landing page
-      const slug = formData.title.toLowerCase().replace(/\s+/g, '-')
-      const newPage: LandingPage = {
-        id: Date.now().toString(),
-        title: formData.title,
-        description: formData.description,
-        slug: slug,
-        content: {
-          hero: {
-            title: formData.title,
-            subtitle: formData.description,
-            cta: formData.callToAction
-          },
-          features: formData.features.split(',').map(f => f.trim()),
-          targetAudience: formData.targetAudience,
-          businessType: formData.businessType
+      const response = await fetch('/api/generate-landing', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        created_at: new Date().toISOString(),
-        published: false
-      }
-      
-      setLandingPages([...landingPages, newPage])
-      setShowCreateForm(false)
-      setFormData({
-        title: '',
-        description: '',
-        businessType: '',
-        targetAudience: '',
-        features: '',
-        callToAction: ''
+        body: JSON.stringify({ prompt }),
       })
+
+      if (!response.ok) {
+        throw new Error('Failed to generate landing page')
+      }
+
+      const newPage = await response.json()
+      setLandingPages([newPage, ...landingPages])
+      setShowCreateForm(false)
+      setPrompt('')
       toast.success('Landing page created successfully!')
     } catch (error) {
       console.error('Error creating landing page:', error)
@@ -109,8 +98,21 @@ export default function DashboardPage() {
 
   async function deletePage(id: string) {
     if (confirm('Are you sure you want to delete this landing page?')) {
-      setLandingPages(landingPages.filter(page => page.id !== id))
-      toast.success('Landing page deleted')
+      try {
+        const response = await fetch(`/api/landing-pages?id=${id}`, {
+          method: 'DELETE',
+        })
+        
+        if (response.ok) {
+          setLandingPages(landingPages.filter(page => page.id !== id))
+          toast.success('Landing page deleted')
+        } else {
+          throw new Error('Failed to delete')
+        }
+      } catch (error) {
+        console.error('Error deleting page:', error)
+        toast.error('Failed to delete landing page')
+      }
     }
   }
 
@@ -131,7 +133,7 @@ export default function DashboardPage() {
     <div className="container mx-auto py-8 max-w-7xl">
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-3xl font-bold">Landing Page Generator</h1>
+          <h1 className="text-3xl font-bold">Your Landing Pages</h1>
           <p className="text-muted-foreground mt-2">Create beautiful landing pages with AI in seconds</p>
         </div>
         <Button onClick={() => setShowCreateForm(true)} size="lg">
@@ -144,93 +146,48 @@ export default function DashboardPage() {
         <Card className="mb-8">
           <CardHeader>
             <CardTitle>Generate New Landing Page</CardTitle>
-            <CardDescription>Fill in your business details and let AI create your landing page</CardDescription>
+            <CardDescription>Describe your business or idea, and AI will create a stunning landing page</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid gap-4">
               <div className="grid gap-2">
-                <Label htmlFor="title">Business Name</Label>
-                <Input
-                  id="title"
-                  value={formData.title}
-                  onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  placeholder="My Awesome Business"
-                />
-              </div>
-              
-              <div className="grid gap-2">
-                <Label htmlFor="description">Tagline / Description</Label>
+                <Label htmlFor="prompt">What's your landing page about?</Label>
                 <Textarea
-                  id="description"
-                  value={formData.description}
-                  onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  placeholder="The best solution for your needs..."
-                  rows={2}
+                  id="prompt"
+                  value={prompt}
+                  onChange={(e) => setPrompt(e.target.value)}
+                  placeholder="Example: A SaaS tool that helps developers automate their deployment process. It should have a modern, tech-focused design with features like CI/CD integration, monitoring, and team collaboration."
+                  rows={4}
+                  className="resize-none"
                 />
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="grid gap-2">
-                  <Label htmlFor="businessType">Business Type</Label>
-                  <Input
-                    id="businessType"
-                    value={formData.businessType}
-                    onChange={(e) => setFormData({ ...formData, businessType: e.target.value })}
-                    placeholder="SaaS, E-commerce, Agency..."
-                  />
-                </div>
-                
-                <div className="grid gap-2">
-                  <Label htmlFor="targetAudience">Target Audience</Label>
-                  <Input
-                    id="targetAudience"
-                    value={formData.targetAudience}
-                    onChange={(e) => setFormData({ ...formData, targetAudience: e.target.value })}
-                    placeholder="Developers, Small businesses..."
-                  />
-                </div>
-              </div>
-
-              <div className="grid gap-2">
-                <Label htmlFor="features">Key Features (comma separated)</Label>
-                <Input
-                  id="features"
-                  value={formData.features}
-                  onChange={(e) => setFormData({ ...formData, features: e.target.value })}
-                  placeholder="Fast delivery, 24/7 support, Easy to use..."
-                />
-              </div>
-
-              <div className="grid gap-2">
-                <Label htmlFor="callToAction">Call to Action Text</Label>
-                <Input
-                  id="callToAction"
-                  value={formData.callToAction}
-                  onChange={(e) => setFormData({ ...formData, callToAction: e.target.value })}
-                  placeholder="Get Started Now"
-                />
+                <p className="text-sm text-muted-foreground">
+                  Be as specific as you like - mention your business type, target audience, key features, design preferences, etc.
+                </p>
               </div>
 
               <div className="flex gap-4 pt-4">
                 <Button 
                   onClick={generateLandingPage} 
-                  disabled={creating || !formData.title || !formData.description}
+                  disabled={creating || !prompt.trim()}
                   size="lg"
                   className="flex-1"
                 >
                   {creating ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Generating...
+                      Generating with AI...
                     </>
                   ) : (
                     <>
-                      <Globe className="mr-2 h-4 w-4" />
+                      <Sparkles className="mr-2 h-4 w-4" />
                       Generate Landing Page
                     </>
                   )}
                 </Button>
-                <Button variant="outline" onClick={() => setShowCreateForm(false)} size="lg">
+                <Button variant="outline" onClick={() => {
+                  setShowCreateForm(false)
+                  setPrompt('')
+                }} size="lg">
                   Cancel
                 </Button>
               </div>
@@ -256,16 +213,14 @@ export default function DashboardPage() {
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <span>Created: {new Date(page.created_at).toLocaleDateString()}</span>
                   {page.published && (
-                    <span className="text-green-600 font-medium">• Published</span>
+                    <span className="text-green-600 font-medium">• Live</span>
                   )}
                 </div>
                 
                 <div className="flex items-center gap-2 p-2 bg-muted rounded-md">
-                  <Input 
-                    value={`${window.location.origin}/p/${page.slug}`}
-                    readOnly
-                    className="text-sm"
-                  />
+                  <span className="text-sm truncate flex-1">
+                    {typeof window !== 'undefined' ? `${window.location.origin}/p/${page.slug}` : `/p/${page.slug}`}
+                  </span>
                   <Button
                     size="sm"
                     variant="ghost"
@@ -276,13 +231,14 @@ export default function DashboardPage() {
                 </div>
 
                 <div className="flex gap-2">
-                  <Button size="sm" variant="outline" className="flex-1">
+                  <Button 
+                    size="sm" 
+                    variant="outline" 
+                    className="flex-1"
+                    onClick={() => window.open(`/p/${page.slug}`, '_blank')}
+                  >
                     <Eye className="mr-2 h-3 w-3" />
-                    Preview
-                  </Button>
-                  <Button size="sm" variant="outline" className="flex-1">
-                    <Download className="mr-2 h-3 w-3" />
-                    Export
+                    View
                   </Button>
                   <Button 
                     size="sm" 
