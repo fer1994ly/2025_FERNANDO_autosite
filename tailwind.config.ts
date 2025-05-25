@@ -8,13 +8,11 @@ import colors from "tailwindcss/colors";
 const config: Config = {
   darkMode: ["class"],
   content: [
-    "./.contentlayer/generated/**/*.{js,jsx,ts,tsx,md,mdx}",
     "./node_modules/pliny/**/*.{ts,js}",
     "./pages/**/*.{html,js,ts,jsx,tsx,mdx}",
     "./components/**/*.{html,js,ts,jsx,tsx,mdx}",
     "./app/**/*.{html,js,ts,jsx,tsx,mdx}",
     "./layouts/**/*.{html,js,ts,tsx}",
-    "./data/**/*.mdx",
     "./templates/**/*.{html,js,ts,jsx,tsx,mdx}",
   ],
   theme: {
