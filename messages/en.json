@@ -43,16 +43,6 @@
             "title": "Pricing",
             "url": "/#pricing",
             "target": "_self"
-          },
-          {
-            "title": "Docs",
-            "url": "/docs",
-            "target": "_blank"
-          },
-          {
-            "title": "Blog",
-            "url": "/blog",
-            "target": "_blank"
           }
         ]
       },
@@ -168,34 +158,34 @@
       ]
     },
     "feature": {
-      "title": "Why Developers Choose Us?",
-      "description": "We provide a modern tech stack and complete feature modules to help you build professional SaaS products quickly.",
-      "tip": "Over 1000+ developers have successfully launched projects using our template",
+      "title": "Why Choose Our Landing Page Generator?",
+      "description": "Create stunning landing pages in seconds with AI-powered content generation",
+      "tip": "Join thousands who've launched their businesses with our platform",
       "items": [
         {
-          "title": "Modern Tech Stack",
-          "description": "Built with Next.js 14 + TypeScript + Tailwind CSS for the best development experience.",
+          "title": "AI-Powered Generation",
+          "description": "Simply describe your business and let AI create professional copy, layout, and design instantly.",
           "avatar": {
             "src": "/imgs/icons/1.svg"
           }
         },
         {
-          "title": "Complete User System",
-          "description": "Integrated Supabase auth and database, supporting third-party login and user management.",
+          "title": "One-Click Publish",
+          "description": "Your landing page is instantly live with a custom URL. No coding or hosting setup required.",
           "avatar": {
             "src": "/imgs/icons/2.svg"
           }
         },
         {
-          "title": "i18n Support",
-          "description": "Built-in i18n system with one-click translation for global market expansion.",
+          "title": "Mobile Optimized",
+          "description": "Every page is automatically responsive and looks perfect on all devices.",
           "avatar": {
             "src": "/imgs/icons/3.svg"
           }
         },
         {
-          "title": "Payment System",
-          "description": "Stripe integration supporting multiple billing models for quick monetization.",
+          "title": "SEO Ready",
+          "description": "Built-in SEO optimization ensures your page ranks well in search engines.",
           "avatar": {
             "src": "/imgs/icons/4.svg"
           }
@@ -203,12 +193,12 @@
       ]
     },
     "cta": {
-      "title": "Ready to Launch Your SaaS Project?",
-      "description": "Start using Ship SaaS One Click now and bring your ideas to life quickly!",
+      "title": "Ready to Create Your Landing Page?",
+      "description": "Join thousands of businesses who've launched with our AI-powered platform.",
       "buttons": [
         {
-          "title": "Start Free",
-          "url": "/docs/getting-started",
+          "title": "Create Your Page Now",
+          "url": "/dashboard",
           "target": "_blank"
         }
       ]

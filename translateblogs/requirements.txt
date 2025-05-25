@@ -1,5 +1,0 @@
-pypinyin
-openai
-python-frontmatter 
-pyyaml 
-tqdm
