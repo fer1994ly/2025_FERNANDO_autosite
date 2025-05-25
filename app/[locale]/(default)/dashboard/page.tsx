@@ -41,7 +41,7 @@ export default function DashboardPage() {
   useEffect(() => {
     checkUser()
     fetchLandingPages()
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   async function checkUser() {
     try {

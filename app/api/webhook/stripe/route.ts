@@ -4,7 +4,7 @@ import { createServerClient } from "@/lib/supabase/server-client";
 
 // 初始化 Stripe
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2024-11-20.acacia",
+  apiVersion: "2025-02-24.acacia",
 });
 
 // Webhook 签名密钥

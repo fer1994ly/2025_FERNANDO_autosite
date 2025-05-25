@@ -1,4 +1,3 @@
-import { withContentlayer } from "next-contentlayer2";
 import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin();
@@ -8,19 +7,17 @@ const nextConfig = {
     domains: ["picsum.photos"],
     dangerouslyAllowSVG: true,
     unoptimized: true,
-  },
-  reactStrictMode: true,
-  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
-  eslint: {
-    dirs: ["app", "components", "layouts", "scripts"],
-  },
-  images: {
     remotePatterns: [
       {
         protocol: "https",
         hostname: "picsum.photos",
       },
     ],
+  },
+  reactStrictMode: true,
+  pageExtensions: ["ts", "tsx", "js", "jsx"],
+  eslint: {
+    dirs: ["app", "components", "layouts", "scripts"],
   },
   typescript: {
     // ignoreBuildErrors: true,
@@ -46,4 +43,4 @@ const nextConfig = {
   },
 };
 
-export default withNextIntl(withContentlayer(nextConfig));
+export default withNextIntl(nextConfig);

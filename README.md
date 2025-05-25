@@ -1,8 +1,8 @@
 # AI Landing Page Generator
 
-🚀 Create stunning landing pages in seconds with AI
+🚀 Create stunning landing pages in seconds with AI - Updated!
 
-A simple, powerful AI-powered landing page generator. Built with Next.js + Supabase, featuring complete user system and payment integration.
+A simple, powerful AI-powered landing page generator. Built with Next.js + Supabase, featuring complete user system and payment integration. Now simplified and focused on landing page generation only.
 
 ## 🌟 主要特性
 
