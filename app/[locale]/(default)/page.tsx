@@ -1,4 +1,4 @@
-uimport { use } from 'react';
+import { use } from 'react';
 import ShadcnLandingPage from "@/templates/shadcn/pages/landing";
 
 export default function LandingPage({ params }) {

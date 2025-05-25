@@ -60,9 +60,9 @@
       "text_align": "left",
       "buttons": [
         {
-          "title": "Start Now",
-          "url": "/docs/getting-started",
-          "target": "_blank"
+          "title": "Create Your Page",
+          "url": "/dashboard",
+          "target": "_self"
         },
         {
           "title": "View Demo",
@@ -78,8 +78,8 @@
       "items": [
         {
           "name": "what",
-          "title": "Why Choose Ship SaaS One Click?",
-          "description": "We provide an all-in-one AI SaaS startup solution, letting you focus on product innovation rather than infrastructure.",
+          "title": "Why Choose Our Landing Page Generator?",
+          "description": "Create professional landing pages instantly with AI, no design or coding skills required.",
           "image": {
             "src": "/imgs/section-1.png"
           },
