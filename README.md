@@ -53,9 +53,9 @@ NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
 
-# openai api_key
-OPENAI_API_KEY=
-OPENAI_API_BASE=
+# Hugging Face API key (OpenAI-compatible)
+HUGGINGFACE_API_KEY=hf_xxxxxxxxxxxxxxxxxxxxxxxx
+HUGGINGFACE_API_BASE=https://router.huggingface.co/fireworks-ai/inference/v1
 
 # stripe
 STRIPE_PUBLIC_KEY=

@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
-import OpenAI from 'openai'
+import { OpenAI } from 'openai'
 import { createClient } from '@/lib/supabase/server'
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+const client = new OpenAI({
+  baseURL: process.env.HUGGINGFACE_API_BASE || "https://router.huggingface.co/fireworks-ai/inference/v1",
+  apiKey: process.env.HUGGINGFACE_API_KEY,
 })
 
 export async function POST(request: NextRequest) {
@@ -22,8 +23,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Generate landing page content using AI
-    const completion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+    const completion = await client.chat.completions.create({
+      model: "accounts/fireworks/models/deepseek-r1",
       messages: [
         {
           role: "system",
